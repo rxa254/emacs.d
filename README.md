@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/purcell/emacs.d.png?branch=master)](https://travis-ci.org/purcell/emacs.d)
-
 # A reasonable Emacs config
 
 This is my emacs configuration tree, continually used and tweaked
@@ -54,7 +52,7 @@ To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
 `init.el` contained in this repo ends up at `~/.emacs.d/init.el`:
 
 ```
-git clone https://github.com/purcell/emacs.d.git ~/.emacs.d
+git clone git@github.com:rxa254/emacs.d.git ~/.emacs.d
 ```
 
 Upon starting up Emacs for the first time, further third-party
@@ -109,6 +107,7 @@ of this code, and that you have updated your packages to the most recent availab
 versions (see "Updates" above). If you still experience problems, go ahead and
 [file an issue on the github project](https://github.com/purcell/emacs.d).
 
+Forked From:::
 -Steve Purcell
 
 <hr>
