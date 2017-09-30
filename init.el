@@ -82,32 +82,29 @@
 (require 'init-projectile)
 
 (require 'init-compile)
-(require 'init-crontab)
-(require 'init-textile)
+;;(require 'init-crontab)
 (require 'init-markdown)
 (require 'init-csv)
-(require 'init-erlang)
+;;(require 'init-erlang)
 (require 'init-javascript)
-(require 'init-php)
-(require 'init-org)
-(require 'init-nxml)
+;;(require 'init-php)
+;;(require 'init-org)
+;;(require 'init-nxml)
 (require 'init-html)
 (require 'init-css)
-(require 'init-haml)
 (require 'init-python-mode)
-(unless (version<= emacs-version "24.3")
-  (require 'init-haskell))
-(require 'init-elm)
-(require 'init-ruby-mode)
-(require 'init-rails)
-(require 'init-sql)
+
+;;(require 'init-elm)
+;;(require 'init-ruby-mode)
+;;(require 'init-rails)
+;;(require 'init-sql)
 
 (require 'init-paredit)
 (require 'init-lisp)
-(require 'init-slime)
-(unless (version<= emacs-version "24.2")
-  (require 'init-clojure)
-  (require 'init-clojure-cider))
+;;(require 'init-slime)
+;;(unless (version<= emacs-version "24.2")
+;;  (require 'init-clojure)
+;;  (require 'init-clojure-cider))
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -120,8 +117,8 @@
 (require 'init-ledger)
 ;; Extra packages which don't require any configuration
 
-(require-package 'gnuplot)
-(require-package 'lua-mode)
+;;(require-package 'gnuplot)
+;;(require-package 'lua-mode)
 (require-package 'htmlize)
 (require-package 'dsvn)
 (when *is-a-mac*
@@ -131,9 +128,9 @@
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+;;(require 'server)
+;;(unless (server-running-p)
+;;  (server-start))
 
 
 ;;----------------------------------------------------------------------------
@@ -157,7 +154,6 @@
 
 (when (maybe-require-package 'uptimes)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
-
 
 (provide 'init)
 
