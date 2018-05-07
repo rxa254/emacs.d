@@ -8,6 +8,13 @@
 (when (version< emacs-version "24.4")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
+(require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t)
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking) ;; Measure startup time
 
@@ -23,7 +30,7 @@
 (add-hook 'after-init-hook
           (lambda () (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold)))
 
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -58,7 +65,7 @@
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-(require 'init-flycheck)
+;;(require 'init-flycheck)
 
 (require 'init-recentf)
 (require 'init-smex)
@@ -74,8 +81,8 @@
 (require 'init-whitespace)
 (require 'init-fci)
 
-(require 'init-vc)
-(require 'init-darcs)
+;;(require 'init-vc)
+;;(require 'init-darcs)
 (require 'init-git)
 (require 'init-github)
 
@@ -83,10 +90,10 @@
 
 (require 'init-compile)
 ;;(require 'init-crontab)
-(require 'init-markdown)
+;;(require 'init-markdown)
 (require 'init-csv)
 ;;(require 'init-erlang)
-(require 'init-javascript)
+;;(require 'init-javascript)
 ;;(require 'init-php)
 ;;(require 'init-org)
 ;;(require 'init-nxml)
@@ -120,7 +127,7 @@
 ;;(require-package 'gnuplot)
 ;;(require-package 'lua-mode)
 (require-package 'htmlize)
-(require-package 'dsvn)
+;;(require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
 (maybe-require-package 'regex-tool)
@@ -128,9 +135,9 @@
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
-;;(require 'server)
-;;(unless (server-running-p)
-;;  (server-start))
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
 
 ;;----------------------------------------------------------------------------
@@ -157,7 +164,10 @@
 
 (provide 'init)
 
+(desktop-save-mode 0)
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
+;; Melpa
