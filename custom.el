@@ -9,56 +9,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(aquamacs-additional-fontsets nil t)
- '(aquamacs-customization-version-id 308 t)
- '(aquamacs-tool-bar-user-customization nil t)
- '(auto-fill-function nil t)
- '(custom-enabled-themes (quote (wombat)))
- '(custom-file "~/.emacs.d/custom.el")
- '(custom-theme-directory "~/.emacs.d/Themes/")
- '(default-frame-alist
-    (quote
-     ((fringe)
-      (right-fringe)
-      (left-fringe . 1)
-      (internal-border-width . 0)
-      (vertical-scroll-bars . right)
-      (cursor-type . box)
-      (menu-bar-lines . 1)
-      (tool-bar-lines . 1)
-      (background-toolbar-color . "#000000000000")
-      (bottom-toolbar-shadow-color . "#000000000000")
-      (top-toolbar-shadow-color . "#ffffffffffff")
-      (background-color . "black")
-      (background-mode . dark)
-      (border-color . "white")
-      (cursor-color . "yellow")
-      (foreground-color . "white")
-      (mouse-color . "white"))))
- '(fringe-indicator-alist
+ '(package-selected-packages
    (quote
-    ((continuation nil nil)
-     (truncation left-truncation right-truncation)
-     (continuation left-continuation right-continuation)
-     (overlay-arrow . right-triangle)
-     (up . up-arrow)
-     (down . down-arrow)
-     (top top-left-angle top-right-angle)
-     (bottom bottom-left-angle bottom-right-angle top-right-angle top-left-angle)
-     (top-bottom left-bracket right-bracket top-right-angle top-left-angle)
-     (empty-line . empty-line)
-     (unknown . question-mark))) t)
- '(ns-tool-bar-display-mode (quote both) t)
- '(ns-tool-bar-size-mode (quote regular) t)
- '(visual-line-mode t t)
- '(word-wrap t))
+    (uptimes regex-tool osx-location flycheck-ledger ledger-mode origami cask-mode flycheck-package flycheck highlight-quoted macrostep cl-lib-highlight aggressive-indent redshank immortal-scratch hl-sexp auto-compile ipretty lively elisp-slime-nav paredit-everywhere paredit company-anaconda anaconda-mode pip-requirements css-eldoc skewer-less less-css-mode scss-mode sass-mode rainbow-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep unfill undo-tree symbol-overlay switch-window smex session scratch rainbow-delimiters projectile page-break-lines nlinum multiple-cursors move-dup mmm-mode magit-gh-pulls list-unicode-display ivy-historian indent-guide ibuffer-vc highlight-escape-sequences guide-key gitignore-mode github-issues github-clone gitconfig-mode git-timemachine git-messenger git-blamed fullframe fill-column-indicator expand-region exec-path-from-shell disable-mouse diminish default-text-scale counsel company-quickhelp command-log-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmd-to-echo bug-reference-github browse-kill-ring avy anzu alert))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(emacs-lisp-mode-default ((t (:height 150 :family "Menlo"))) t)
- '(latex-mode-default ((t (:height 180 :family "Inconsolata")))))
+ )
 
 
 ;; Spell checking in Latex

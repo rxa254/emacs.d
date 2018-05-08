@@ -50,7 +50,7 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
-(require-package 'project-local-variables)
+;(require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
@@ -60,7 +60,7 @@
 (require 'init-themes)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
-(require 'init-dired)
+;(require 'init-dired)
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)
@@ -91,13 +91,13 @@
 (require 'init-compile)
 ;;(require 'init-crontab)
 ;;(require 'init-markdown)
-(require 'init-csv)
+;(require 'init-csv)
 ;;(require 'init-erlang)
 ;;(require 'init-javascript)
 ;;(require 'init-php)
 ;;(require 'init-org)
 ;;(require 'init-nxml)
-(require 'init-html)
+;(require 'init-html)
 (require 'init-css)
 (require 'init-python-mode)
 
@@ -122,12 +122,12 @@
 (require 'init-folding)
 (require 'init-dash)
 (require 'init-ledger)
-;; Extra packages which don't require any configuration
 
-;;(require-package 'gnuplot)
-;;(require-package 'lua-mode)
-(require-package 'htmlize)
-;;(require-package 'dsvn)
+;; Extra packages which don't require any configuration
+;(require-package 'gnuplot)
+;(require-package 'lua-mode)
+;(require-package 'htmlize)
+;(require-package 'dsvn)
 (when *is-a-mac*
   (require-package 'osx-location))
 (maybe-require-package 'regex-tool)
