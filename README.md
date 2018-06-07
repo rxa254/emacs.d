@@ -52,7 +52,7 @@ To install, clone this repo to `~/.emacs.d`, i.e. ensure that the
 `init.el` contained in this repo ends up at `~/.emacs.d/init.el`:
 
 ```
-git clone git@github.com:rxa254/emacs.d.git ~/.emacs.d
+git clone https://github.com/rxa254/emacs.d.git ~/.emacs.d
 ```
 
 Upon starting up Emacs for the first time, further third-party
@@ -111,11 +111,3 @@ Forked From:::
 -Steve Purcell
 
 <hr>
-
-[![](http://api.coderwall.com/purcell/endorsecount.png)](http://coderwall.com/purcell)
-
-[![](http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png)](http://uk.linkedin.com/in/stevepurcell)
-
-[sanityinc.com](http://www.sanityinc.com/)
-
-[@sanityinc](https://twitter.com/)

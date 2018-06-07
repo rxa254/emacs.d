@@ -8,6 +8,13 @@
 (when (version< emacs-version "24.4")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
+(require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t)
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking) ;; Measure startup time
 
@@ -23,7 +30,7 @@
 (add-hook 'after-init-hook
           (lambda () (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold)))
 
-;;----------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -43,7 +50,7 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
-(require-package 'project-local-variables)
+;(require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
@@ -74,8 +81,8 @@
 (require 'init-whitespace)
 (require 'init-fci)
 
-(require 'init-vc)
-(require 'init-darcs)
+;;(require 'init-vc)
+;;(require 'init-darcs)
 (require 'init-git)
 (require 'init-github)
 
@@ -105,10 +112,10 @@
 
 (require 'init-paredit)
 (require 'init-lisp)
-(require 'init-slime)
-(unless (version<= emacs-version "24.2")
-  (require 'init-clojure)
-  (require 'init-clojure-cider))
+;;(require 'init-slime)
+;;(unless (version<= emacs-version "24.2")
+;;  (require 'init-clojure)
+;;  (require 'init-clojure-cider))
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -119,12 +126,13 @@
 (require 'init-folding)
 (require 'init-dash)
 (require 'init-ledger)
-;; Extra packages which don't require any configuration
 
+;; Extra packages which don't require any configuration
 ;;(require-package 'gnuplot)
 ;;(require-package 'lua-mode)
 ;;(require-package 'htmlize)
 ;;(require-package 'dsvn)
+
 (when *is-a-mac*
   (require-package 'osx-location))
 (maybe-require-package 'regex-tool)
@@ -153,10 +161,12 @@
 (when (maybe-require-package 'uptimes)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
-
 (provide 'init)
+
+(desktop-save-mode 0)
 
 ;; Local Variables:
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
+;; Melpa
