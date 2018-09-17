@@ -50,7 +50,7 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
-(require-package 'project-local-variables)
+;(require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
@@ -59,7 +59,7 @@
 (require 'init-xterm)
 (require 'init-themes)
 (require 'init-osx-keys)
-(require 'init-gui-frames)
+;;(require 'init-gui-frames)
 (require 'init-dired)
 (require 'init-isearch)
 (require 'init-grep)
@@ -69,11 +69,11 @@
 
 (require 'init-recentf)
 (require 'init-smex)
-(require 'init-ivy)
+;;(require 'init-ivy)
 (require 'init-hippie-expand)
 (require 'init-company)
-(require 'init-windows)
-(require 'init-sessions)
+;;(require 'init-windows)
+;;(require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
 
@@ -86,21 +86,25 @@
 (require 'init-git)
 (require 'init-github)
 
-(require 'init-projectile)
+;;(require 'init-projectile)
 
 (require 'init-compile)
-;;(require 'init-crontab)
-;;(require 'init-markdown)
-(require 'init-csv)
+(require 'init-crontab)
+(require 'init-textile)
+(require 'init-markdown)
+;;(require 'init-csv)
 ;;(require 'init-erlang)
 ;;(require 'init-javascript)
 ;;(require 'init-php)
 ;;(require 'init-org)
 ;;(require 'init-nxml)
 (require 'init-html)
-(require 'init-css)
+;;(require 'init-css)
+;;(require 'init-haml)
 (require 'init-python-mode)
-
+(unless (version<= emacs-version "24.3")
+  ;;(require 'init-haskell)
+  )
 ;;(require 'init-elm)
 ;;(require 'init-ruby-mode)
 ;;(require 'init-rails)
@@ -122,22 +126,17 @@
 (require 'init-folding)
 (require 'init-dash)
 (require 'init-ledger)
-;; Extra packages which don't require any configuration
 
+;; Extra packages which don't require any configuration
 ;;(require-package 'gnuplot)
 ;;(require-package 'lua-mode)
-(require-package 'htmlize)
+;;(require-package 'htmlize)
 ;;(require-package 'dsvn)
+
 (when *is-a-mac*
   (require-package 'osx-location))
 (maybe-require-package 'regex-tool)
 
-;;----------------------------------------------------------------------------
-;; Allow access from emacsclient
-;;----------------------------------------------------------------------------
-(require 'server)
-(unless (server-running-p)
-  (server-start))
 
 
 ;;----------------------------------------------------------------------------
