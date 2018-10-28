@@ -1,4 +1,3 @@
-
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
 
@@ -50,7 +49,7 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'wgrep)
-;(require-package 'project-local-variables)
+;;(require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'command-log-mode)
@@ -58,9 +57,9 @@
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-themes)
-(require 'init-osx-keys)
+;;(require 'init-osx-keys)
 ;;(require 'init-gui-frames)
-(require 'init-dired)
+;;(require 'init-dired)
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)
@@ -89,7 +88,7 @@
 ;;(require 'init-projectile)
 
 (require 'init-compile)
-(require 'init-crontab)
+;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
 ;;(require 'init-csv)
@@ -98,7 +97,7 @@
 ;;(require 'init-php)
 ;;(require 'init-org)
 ;;(require 'init-nxml)
-(require 'init-html)
+;;(require 'init-html)
 ;;(require 'init-css)
 ;;(require 'init-haml)
 (require 'init-python-mode)
@@ -110,8 +109,8 @@
 ;;(require 'init-rails)
 ;;(require 'init-sql)
 
-(require 'init-paredit)
-(require 'init-lisp)
+;;(require 'init-paredit)
+;;(require 'init-lisp)
 ;;(require 'init-slime)
 ;;(unless (version<= emacs-version "24.2")
 ;;  (require 'init-clojure)
@@ -123,9 +122,9 @@
 
 (require 'init-misc)
 
-(require 'init-folding)
-(require 'init-dash)
-(require 'init-ledger)
+;;(require 'init-folding)
+;;(require 'init-dash)
+;;(require 'init-ledger)
 
 ;; Extra packages which don't require any configuration
 ;;(require-package 'gnuplot)
