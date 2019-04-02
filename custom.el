@@ -1,3 +1,5 @@
+;;; Commentary
+
 ;; This is the Aquamacs Preferences file.
 ;; Add Emacs-Lisp code here that should be executed whenever
 ;; you start Aquamacs Emacs. If errors occur, Aquamacs will stop
@@ -29,12 +31,6 @@
  '(default ((t (:family "Inconsolata" :foundry "PfEd" :slant normal :weight normal :height 151 :width normal)))))
 
 
-;; Spell checking in Latex
-;;(require 'flymake)
-
-;;(defun flymake-get-tex-args (file-name)
-;;(list "pdflatex"
-;;(list "-file-line-error" "-draftmode" "-interaction=nonstopmode" file-name)))
 
 ;;(add-hook 'LaTeX-mode-hook 'flymake-mode)
 
