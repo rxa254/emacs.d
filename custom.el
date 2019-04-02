@@ -9,16 +9,24 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-bright)))
+ '(custom-safe-themes
+   (quote
+    ("1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
+ '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (uptimes regex-tool osx-location flycheck-ledger ledger-mode origami cask-mode flycheck-package flycheck highlight-quoted macrostep cl-lib-highlight aggressive-indent redshank immortal-scratch hl-sexp auto-compile ipretty lively elisp-slime-nav paredit-everywhere paredit company-anaconda anaconda-mode pip-requirements css-eldoc skewer-less less-css-mode scss-mode sass-mode rainbow-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep unfill undo-tree symbol-overlay switch-window smex session scratch rainbow-delimiters projectile page-break-lines nlinum multiple-cursors move-dup mmm-mode magit-gh-pulls list-unicode-display ivy-historian indent-guide ibuffer-vc highlight-escape-sequences guide-key gitignore-mode github-issues github-clone gitconfig-mode git-timemachine git-messenger git-blamed fullframe fill-column-indicator expand-region exec-path-from-shell disable-mouse diminish default-text-scale counsel company-quickhelp command-log-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmd-to-echo bug-reference-github browse-kill-ring avy anzu alert))))
+    (uptimes regex-tool osx-location flycheck-ledger ledger-mode origami cask-mode flycheck-package flycheck highlight-quoted macrostep cl-lib-highlight aggressive-indent redshank immortal-scratch hl-sexp auto-compile ipretty lively elisp-slime-nav paredit-everywhere paredit company-anaconda anaconda-mode pip-requirements css-eldoc skewer-less less-css-mode scss-mode sass-mode rainbow-mode yagist whole-line-or-region whitespace-cleanup-mode wgrep unfill undo-tree symbol-overlay switch-window smex session scratch rainbow-delimiters projectile page-break-lines nlinum multiple-cursors move-dup mmm-mode magit-gh-pulls list-unicode-display ivy-historian indent-guide ibuffer-vc highlight-escape-sequences guide-key gitignore-mode github-issues github-clone gitconfig-mode git-timemachine git-messenger git-blamed fullframe fill-column-indicator expand-region exec-path-from-shell disable-mouse diminish default-text-scale counsel company-quickhelp command-log-mode color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmd-to-echo bug-reference-github browse-kill-ring avy anzu alert)))
+ '(show-paren-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Inconsolata" :foundry "PfEd" :slant normal :weight normal :height 151 :width normal)))))
 
 
 ;; Spell checking in Latex
