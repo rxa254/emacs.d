@@ -25,3 +25,4 @@ running `M-x package-refresh-contents` before doing so.
 
 ## Useful links
 * https://www.emacswiki.org/emacs/EmacsForMacOS
+* http://thegreyblog.blogspot.com/2017/12/starting-emacs-daemon-automatically-at.html
