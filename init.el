@@ -1,10 +1,17 @@
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
+;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
 
-(let ((minver "24.1"))
+;;; Code:
+
+;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+;;(setq debug-on-error t)
+
+(let ((minver "24.4"))
   (when (version< emacs-version minver)
     (error "Your Emacs is too old -- this config requires v%s or higher" minver)))
-(when (version< emacs-version "24.4")
+(when (version< emacs-version "25.1")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
 (require 'tls)
@@ -36,13 +43,13 @@ There are two things you can do about this warning:
 (defconst *is-a-mac* (eq system-type 'darwin))
 
 ;;----------------------------------------------------------------------------
-;; Temporarily reduce garbage collection during startup
+;; Adjust garbage collection thresholds during startup, and thereafter
 ;;----------------------------------------------------------------------------
-(defconst sanityinc/initial-gc-cons-threshold gc-cons-threshold
-  "Initial value of `gc-cons-threshold' at start-up time.")
-(setq gc-cons-threshold (* 128 1024 1024))
-(add-hook 'after-init-hook
-          (lambda () (setq gc-cons-threshold sanityinc/initial-gc-cons-threshold)))
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 ;;---------------------------------------------------------------------------
 ;; Bootstrap config
@@ -66,7 +73,7 @@ There are two things you can do about this warning:
 (require-package 'wgrep)
 ;;(require-package 'project-local-variables)
 (require-package 'diminish)
-(require-package 'scratch)
+(maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
 (require 'init-frame-hooks)
@@ -86,6 +93,7 @@ There are two things you can do about this warning:
 ;;(require 'init-ivy)
 (require 'init-hippie-expand)
 (require 'init-company)
+
 ;;(require 'init-windows)
 ;;(require 'init-sessions)
 (require 'init-fonts)
@@ -93,7 +101,6 @@ There are two things you can do about this warning:
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
-(require 'init-fci)
 
 ;;(require 'init-vc)
 ;;(require 'init-darcs)
@@ -106,6 +113,7 @@ There are two things you can do about this warning:
 ;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
+<<<<<<< HEAD
 ;;(require 'init-csv)
 ;;(require 'init-erlang)
 ;;(require 'init-javascript)
@@ -130,12 +138,14 @@ There are two things you can do about this warning:
 ;;(unless (version<= emacs-version "24.2")
 ;;  (require 'init-clojure)
 ;;  (require 'init-clojure-cider))
+
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
 
 (require 'init-misc)
+
 
 ;;(require 'init-folding)
 ;;(require 'init-dash)
@@ -149,9 +159,26 @@ There are two things you can do about this warning:
 
 (when *is-a-mac*
   (require-package 'osx-location))
-(maybe-require-package 'regex-tool)
+(unless (eq system-type 'windows-nt)
+  (maybe-require-package 'daemons))
+(maybe-require-package 'dotenv-mode)
+
+(when (maybe-require-package 'uptimes)
+  (setq-default uptimes-keep-count 200)
+  (add-hook 'after-init-hook (lambda () (require 'uptimes))))
+
+(when (fboundp 'global-eldoc-mode)
+  (add-hook 'after-init-hook 'global-eldoc-mode))
 
 
+;;----------------------------------------------------------------------------
+;; Allow access from emacsclient
+;;----------------------------------------------------------------------------
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
@@ -161,19 +188,16 @@ There are two things you can do about this warning:
 
 
 ;;----------------------------------------------------------------------------
-;; Allow users to provide an optional "init-local" containing personal settings
-;;----------------------------------------------------------------------------
-(require 'init-local nil t)
-
-
-;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
 ;;----------------------------------------------------------------------------
 (require 'init-locales)
 
 
-(when (maybe-require-package 'uptimes)
-  (add-hook 'after-init-hook (lambda () (require 'uptimes))))
+;;----------------------------------------------------------------------------
+;; Allow users to provide an optional "init-local" containing personal settings
+;;----------------------------------------------------------------------------
+(require 'init-local nil t)
+
 
 (provide 'init)
 
