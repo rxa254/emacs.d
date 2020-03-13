@@ -1,7 +1,8 @@
+;;; init.el --- Initialization file for Emacs
+
+;;; Commentary:
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
-;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
-;;; Commentary:
 
 ;;; Code:
 
@@ -96,7 +97,7 @@ There are two things you can do about this warning:
 
 ;;(require 'init-windows)
 ;;(require 'init-sessions)
-(require 'init-fonts)
+;;(require 'init-fonts)
 (require 'init-mmm)
 
 (require 'init-editing-utils)
@@ -113,7 +114,7 @@ There are two things you can do about this warning:
 ;;(require 'init-crontab)
 (require 'init-textile)
 (require 'init-markdown)
-<<<<<<< HEAD
+
 ;;(require 'init-csv)
 ;;(require 'init-erlang)
 ;;(require 'init-javascript)
@@ -123,7 +124,7 @@ There are two things you can do about this warning:
 ;;(require 'init-html)
 ;;(require 'init-css)
 ;;(require 'init-haml)
-(require 'init-python-mode)
+;;(require 'init-python-mode)
 (unless (version<= emacs-version "24.3")
   ;;(require 'init-haskell)
   )
